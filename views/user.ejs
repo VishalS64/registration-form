@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <title></title>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <h1 class="text-center mt-3 mb-3">
+      <%= title %>
+    </h1>
+    <% if(action=='edit' ) { %>
+
+      <div class="card">
+        <div class="card-header">AGO Employees</div>
+        <div class="card-body">
+          <form method="POST" action="/users/edit/<%= users[i].id %>">
+            <div class="
+      flex font-bold justify-center mt-6">
+              <img class="h-24 w-24 rounded-full mb-8"
+                src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="">
+            </div>
+            <h2 class="text-3xl text-center text-white mb-4">Employee Registration</h2>
+            <div class="px-12 pd-10">
+              <div class="w-full mb-2">
+
+                <div>
+                  <label class="text-white dark:text-gray-200" for="passwordConfirmation">Date</label>
+                  <input id="date" type="date" value="<%= users[i].Date %>" name="Date"
+                    class="form-control block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring">
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="text-white dark:text-gray-200" for="exampleFormControlInput1">Employee name</label>
+                <input id="empl" type="text" value="<%= users[i].Name %>" name="Name" autocomplete="off"
+                  class="form-control block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring">
+
+              </div>
+              <div class="mb-3">
+                <label class="text-white dark:text-gray-200" for="exampleFormControlInput1">Password</label>
+                <input id="empl" type="password" value="<%= users[i].Password %>" name="password" autocomplete="off"
+                  class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring">
+
+              </div>
+              <div class="mb-3">
+                <label class="text-white dark:text-gray-200" for="exampleFormControlInput1">Contact no</label>
+                <input id="contact" type="number" name="Mobile_No" maxlength="13" value="<%= users[i].Mobile_No %>"
+                  title="Ten digits code" autocomplete="off"
+                  class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring">
+              </div>
+              <div class="mb-3">
+                <label class="text-white dark:text-gray-200" for="exampleFormControlTextarea1">Permanant
+                  Address</label>
+                <input id="exampleFormControlTextarea1" autocomplete="off" type="text" name="Permanent_Address"
+                  value="<%= users[i].Permanent_Address %>"
+                  class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring">
+              </div>
+              <div class="mb-3">
+                <label class="text-white dark:text-gray-200" for="exampleFormControlTextarea1">Temprory
+                  Address</label>
+                <input type="text" name="Temporary_Address" id="exampleFormControlTextarea1"
+                  value="<%= users[i].Temporary_Address %>"
+                  class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring">
+              </div>
+              <div class="mb-3">
+                <label class="text-white dark:text-gray-200" for="formGroupExampleInput">Education</label><br>
+                <select name="Education" value="<%= users[i].Education %>"
+                  class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring">
+                  <option value="10th_pass">10th pass</option>
+                  <option value="12th_pass">12th pass</option>
+                  <option value="graduation">graduation</option>
+                  <option value="post-graduation">post-graduation</option>
+                </select>
+                <input type="file" value="<%= users[i].Education_certificate %>" name="Education_certificate"
+                  class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring">
+              </div>
+              <div class="mb-3">
+                <label class="text-white dark:text-gray-200" for="formGroupExampleInput">Date of birth</label>
+                <input type="date" value="2000-07-22" value="<%= users[i].Date_Of_Birth %>" name="Date_Of_Birth"
+                  id="formGroupExampleInput" required
+                  class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring">
+              </div>
+              <div class="mb-3">
+                <label class="text-white dark:text-gray-200" for="username">Aadhar No</label>
+                <input type="text" value="<%= users[i].Aadhar_No %>" name="Aadhar_No" id="formGroupExampleInput"
+                  class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring">
+                <input type="file" value="<%= users[i].Aadhar_img %>" name="Aadhar_img"
+                  class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+                  multiple>
+
+              </div>
+              <div class="mb-3">
+                <label class="text-white dark:text-gray-200" for="username">Pan No.</label>
+                <input type="text" value="<%= users[i].Pan_No %>" name="Pan_No" id="formGroupExampleInput"
+                  class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring">
+                <input type="file" name="Pan_img" value="<%= users[i].Pan_img %>"
+                  class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+                  multiple>
+
+              </div>
+              <div class="mb-3">
+                <label class="text-white dark:text-gray-200" value="<%= users[i].resume %>"
+                  for="username">Resume</label>
+
+                <input type="file" id="resume"
+                  class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+                  name="resume" multiple>
+
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="text-white">Emergency contact :</label>
+                <input type="number" autocomplete="off"
+                  class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+                  name="Emergency_Contact_No" value="<%= users[i].Emergency_Contact_No %>" aria-label="contact">
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="text-white">WORK EXPERIENCE :</label>
+                <input class="form-check-input" name="Work_Experience" type="radio" id="inlineCheckbox1" value="YES">
+                <label class="text-white" autocomplete="off" for="inlineCheckbox1">YES</label>
+                <input class="form-check-input" name="Work_Experience" type="radio" id="inlineCheckbox2" value="NO">
+                <label class="text-white" autocomplete="off" for="inlineCheckbox2">NO</label>
+              </div>
+              <div>
+                <div class="mb-3">
+                  <label for="exampleFormControlTextarea1" class="text-white">Previous Compony Name</label>
+                  <input type="text" autocomplete="off"
+                    class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+                    name="Work_details" value="<%= users[i].Work_details %>" aria-label="contact">
+                </div>
+
+                <div class="mb-3">
+                  <input type="submit" name="submit_button" class="btn btn-primary" value="Edit" />
+                </div>
+          </form>
+        </div>
+      </div>
+      <% } else { %>
+        <% if(message.length> 0) { %>
+          <div class="alert alert-success">
+            <%= message %>
+          </div>
+          <% } %>
+            <div class="card">
+              <div class="card-header">
+                <div class="row">
+                  <div class="col">AGO Employees</div>
+                  <div class="col">
+                    <a href="register" class="btn btn-success btn-sm float-end">Add</a>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-bordered">
+                    <tr>
+                      <th>id</th>
+                      <th>Name</th>
+                      <th>Mobile No</th>
+                      <th>Permanent Address</th>
+                      <th>Education</th>
+                      <th>Date Of Birth</th>
+                      <th>Pan No</th>
+                      <th>Emergency Contact No</th>
+                      <th>Action</th>
+                    </tr>
+
+                    <% for (var i=0; i < users.length; /* I save the data in a variable 'users' , I don't know how you
+                      named your variable */ i++){ %>
+                      <tr>
+                        <td>
+                          <%= users[i].id %>
+                        </td>
+                        <td>
+                          <%= users[i].Name %></a>
+                        </td>
+                        <td>
+                          <%= users[i].Mobile_No %>
+                        </td>
+                        <td>
+                          <%= users[i].Permanent_Address %>
+                        </td>
+                        <td>
+                          <%= users[i].Education %>
+                        </td>
+                        <td>
+                          <%= users[i].Date_Of_Birth %>
+                        </td>
+                        <td>
+                          <%= users[i].Pan_No %>
+                        </td>
+                        <td>
+                          <%= users[i].Emergency_Contact_No %>
+                        </td>
+                        <td>
+                          <a href="/registerform/edit/<%= users[i].id %>" class="btn btn-primary btn-sm">Edit</a>
+                          <a href="/users/delete/<%= users[i].id %>"
+                            onclick="return confirm('Are you sure you want to delete this user')"
+                            class="btn btn-danger btn-sm">Delete</a>
+                          <a href="/users/view/<%= users[i].id %>" class="btn btn-info btn-sm">view</a>
+                        </td>
+                      </tr>
+                      <% } %>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+    <% } %>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
